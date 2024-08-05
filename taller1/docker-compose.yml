@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: springboot-thymeleaf-app
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    restart: unless-stopped

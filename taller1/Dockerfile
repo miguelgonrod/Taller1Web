@@ -1,12 +1,14 @@
-# Use una imagen base que tenga Java instalado
-FROM openjdk:21
+# Usa una imagen base de OpenJDK
+FROM openjdk:17-jdk-alpine
 
-COPY . /app
-# Establece el directorio de trabajo
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Construye el archivo JAR de la aplicación
-RUN ./mvnw clean install -DskipTests
+# Copia el archivo JAR generado por tu aplicación en el contenedor
+COPY target/Taller1-1.0.0.jar /app/Taller1-1.0.0.jar
 
-# Ejecuta la aplicación Spring Boot cuando se inicia el contenedor
-CMD ["java", "-jar", "target/ThymeleafPrueba-0.0.1-SNAPSHOT.jar"]
+# Expone el puerto en el que la aplicación está configurada para ejecutarse
+EXPOSE 8080
+
+# Define el comando para ejecutar la aplicación
+CMD ["java", "-jar", "Taller1-1.0.0.jar"]
