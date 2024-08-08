@@ -7,12 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 
+import jakarta.validation.Valid;
+import com.web.taller1.model.Contact;
+import com.web.taller1.repositories.ContactRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/grupo-web-wiki")
 public class RouteController {
+
+    private final ContactRepository contactRepository;
+
+    RouteController(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
 
     @GetMapping(value = {"/", ""})
     public ModelAndView getHomePage() {
@@ -51,7 +60,26 @@ public class RouteController {
 
     @GetMapping("/contactenos")
     public ModelAndView getContactPage() {
-        return new ModelAndView("contactenos");
+        ModelAndView modelAndView = new ModelAndView("contactenos");
+        modelAndView.addObject("contactenos", new Contact());
+        return modelAndView;
+    }
+
+    @PostMapping("/form/contact")
+    public ModelAndView postContactForm(@Valid Contact contact, BindingResult bindingResult, ModelAndView modelAndView) {
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("contact");
+            modelAndView.addObject("contact", contact);
+            return modelAndView;
+        }
+
+        contactRepository.save(contact);
+        return new ModelAndView("redirect:/grupo-web-wiki/thanks");
+    }
+
+    @GetMapping("/thanks")
+    public ModelAndView getFormThanks() {
+        return new ModelAndView("thanks");
     }
 
 }
