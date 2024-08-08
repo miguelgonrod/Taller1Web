@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,6 +37,11 @@ public class Contact {
   @NotBlank(message = "Por favor, complete este campo.")
   @Email(message = "Email is not valid")
   @Size(max = 100, message = "No puede exceder los 100 caracteres")
+  @Pattern(
+    regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$",
+    flags = Pattern.Flag.CASE_INSENSITIVE,
+    message = "El correo debe contener '@' seguido de un punto y no debe contener espacios ni caracteres especiales"
+)
   private String email;
 
   @NotNull(message = "Por favor, complete este campo.")

@@ -61,7 +61,7 @@ public class RouteController {
     @GetMapping("/contactenos")
     public ModelAndView getContactPage() {
         ModelAndView modelAndView = new ModelAndView("contactenos");
-        modelAndView.addObject("contactenos", new Contact());
+        modelAndView.addObject("contact", new Contact());
         return modelAndView;
     }
 
@@ -69,17 +69,17 @@ public class RouteController {
     public ModelAndView postContactForm(@Valid Contact contact, BindingResult bindingResult, ModelAndView modelAndView) {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("contact");
-            modelAndView.addObject("contact", contact);
+            modelAndView.addObject("contactenos", contact);
             return modelAndView;
         }
 
         contactRepository.save(contact);
-        return new ModelAndView("redirect:/grupo-web-wiki/thanks");
+        return new ModelAndView("redirect:/grupo-web-wiki/gracias");
     }
 
-    @GetMapping("/thanks")
+    @GetMapping("/gracias")
     public ModelAndView getFormThanks() {
-        return new ModelAndView("thanks");
+        return new ModelAndView("gracias");
     }
 
 }

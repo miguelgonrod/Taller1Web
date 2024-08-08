@@ -44,10 +44,11 @@
           <p th:if="${#fields.hasErrors('message')}" th:errorclass="form-error" th:errors="*{message}"></p>
         </div>
 
-        <input type="submit" value="Send">
+        <input type="submit" value="Enviar">
       </form>
     </div>
   </section>
+  <script th:href="@{~/grupo-web/js/constraint.js}"></script>
 </body>
 
 </html>
