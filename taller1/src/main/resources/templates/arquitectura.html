@@ -3,6 +3,7 @@
 <head>
     <title>Arquitectura</title>
     <link rel="stylesheet" th:href="@{~/grupo-web/styles/navbar.css}">
+    <link rel="stylesheet" th:href="@{~/grupo-web/styles/arquitectura.css}">
 </head>
 
 <body>
@@ -16,12 +17,32 @@
     </section>
 
     <section id="project-info" class="project-info">
-        <h3>Diagrama de contexto</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <h3>Diagrama de contenedor</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <h3>Diagrama de componentes</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>Diagramas</h3>
+
+        <div class="diagram-container">
+            <div class="diagram">
+                <h3>Diagrama de contexto</h3>
+                <img src="../grupo-web/assets/diagramaContexto.png" alt="Diagrama de contexto">
+            </div>
+            <div class="diagram">
+                <h3>Diagrama del contenedor</h3>
+                <img src="../grupo-web/assets/diagramaContenedor.jpeg" alt="Diagrama del contenedor">
+            </div>
+            <div class="diagram">
+                <h3>Diagrama de componentes</h3>
+                <img src="../grupo-web/assets/diagramaComponentes.png" alt="Diagrama de componentes">
+            </div>
+        </div>
+
+        <div class="model-container">
+            <h3>Modelos</h3>
+            <img src="../grupo-web/assets/entidadRelacion.png" alt="Entidad/Relación: Diccionario">
+        </div>
+
+        <div class="deployment-container">
+            <h3>Diagrama de despliegue</h3>
+            <img src="../grupo-web/assets/diagramaDespliegue.png" alt="Diagrama de despliegue">
+        </div>
     </section>
 
 </section>

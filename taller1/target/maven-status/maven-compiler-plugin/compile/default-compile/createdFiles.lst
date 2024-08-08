@@ -1,5 +1,5 @@
-com/web/taller1/controllers/RouteController.class
 com/web/taller1/AppConfiguration.class
 com/web/taller1/model/Contact.class
 com/web/taller1/repositories/ContactRepository.class
 com/web/taller1/WikiApplication.class
+com/web/taller1/controllers/RouteController.class
