@@ -6,7 +6,8 @@
   }
   
   body {
-    background-color: #f5f5f5;
+    background: url('../assets/blue-technology-1920x1080.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     line-height: 1.6;
   }
@@ -55,7 +56,6 @@
     text-decoration: none;
   }
   .team {
-    background: url('../assets/blue-technology-1920x1080.jpg') no-repeat center center/cover;
     padding: 60px 20px;
     text-align: center;
     color: white;
